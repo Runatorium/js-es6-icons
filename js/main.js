@@ -119,7 +119,7 @@ let selectorDom = document.getElementById('DropList');
 selectorDom.addEventListener('change', function(){
     var value = selectorDom.options[selectorDom.selectedIndex].value;
 	containerdom.innerHTML = "";
-	terrazzo(value)
+	filter(value)
 	
 });
 
@@ -128,7 +128,7 @@ let containerdom = document.getElementById('container-cards');
 containerdom.innerHTML = "";
 
 
-function terrazzo (value){
+function filter (value){
 	let Displayed = DataList.filter(DataList => DataList.type == value);
 	console.log(Displayed)
 	Displayed.forEach((elemento, i) => {
