@@ -114,46 +114,31 @@ let DataList = [
 ];
 
 
-var tipo = 'vegetable';  /*Stampa iniziale*/
-
-/*
 let selectorDom = document.getElementById('DropList');
 
 selectorDom.addEventListener('change', function(){
-    let tipo;
     var value = selectorDom.options[selectorDom.selectedIndex].value;
-    switch(value){
-        case 1:
-        tipo = 'user';
-		createiconcards(tipo);
-		console.log(tipo)
-
-        case 2:
-        tipo = 'vegetable';
-		createiconcards(tipo);
-		console.log(tipo)
-
-        case 3:
-        tipo = 'animal';
-		createiconcards(tipo);
-		console.log(tipo)
-    }
+	containerdom.innerHTML = "";
+	terrazzo(value)
+	
 });
 
-*/
 
-	let containerdom = document.getElementById('container-cards');
-	containerdom.innerHTML = "";
-		
-	let Displayed = DataList.filter(DataList => DataList.type == tipo);
-	
+let containerdom = document.getElementById('container-cards');
+containerdom.innerHTML = "";
+
+
+function terrazzo (value){
+	let Displayed = DataList.filter(DataList => DataList.type == value);
+	console.log(Displayed)
 	Displayed.forEach((elemento, i) => {
 		const card = `<div class="card">
 							<div class="txt-box">
-								 <i class="fa-solid ${Displayed[i].prefix}${DataList[i].name}" style="color:${Displayed[i].color}"></i>
+								 <i class="fa-solid ${Displayed[i].prefix}${Displayed[i].name}" style="color:${DataList[i].color}"></i>
 								 <h2 id="body-txt">${Displayed[i].name}</h2>
 							</div>
 						</div>`;   
 		containerdom.innerHTML += card
-
-	});	
+	});
+	
+}
