@@ -129,8 +129,7 @@ containerdom.innerHTML = "";
 
 
 function filter (value){
-	let Displayed = DataList.filter(DataList => DataList.type == value);
-	console.log(Displayed)
+	let Displayed = value !== 'all'? DataList.filter(DataList => DataList.type == value):DataList;
 	Displayed.forEach((elemento, i) => {
 		const card = `<div class="card">
 							<div class="txt-box">
@@ -140,5 +139,4 @@ function filter (value){
 						</div>`;   
 		containerdom.innerHTML += card
 	});
-	
 }
