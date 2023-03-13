@@ -114,45 +114,46 @@ let DataList = [
 ];
 
 
-tipo = 'user';  /*Stampa iniziale*/
-createiconcards(tipo);
+var tipo = 'vegetable';  /*Stampa iniziale*/
 
+/*
 let selectorDom = document.getElementById('DropList');
 
-selectorDom.addEventListener('click', function(){
+selectorDom.addEventListener('change', function(){
     let tipo;
     var value = selectorDom.options[selectorDom.selectedIndex].value;
     switch(value){
         case 1:
         tipo = 'user';
 		createiconcards(tipo);
+		console.log(tipo)
 
         case 2:
-        tipo = 'Vegetable';
+        tipo = 'vegetable';
 		createiconcards(tipo);
+		console.log(tipo)
 
         case 3:
-        tipo = 'Animal';
+        tipo = 'animal';
 		createiconcards(tipo);
+		console.log(tipo)
     }
 });
 
+*/
 
-function createiconcards (tipo){
 	let containerdom = document.getElementById('container-cards');
 	containerdom.innerHTML = "";
-	
-	
+		
 	let Displayed = DataList.filter(DataList => DataList.type == tipo);
 	
 	Displayed.forEach((elemento, i) => {
 		const card = `<div class="card">
 							<div class="txt-box">
-								 <i class="fa-solid ${DataList[i].prefix}${DataList[i].name}" style="color:${DataList[i].color}"></i>
-								 <h2 id="body-txt">${DataList[i].name}</h2>
+								 <i class="fa-solid ${Displayed[i].prefix}${DataList[i].name}" style="color:${Displayed[i].color}"></i>
+								 <h2 id="body-txt">${Displayed[i].name}</h2>
 							</div>
 						</div>`;   
 		containerdom.innerHTML += card
-	});
-	
-}
+
+	});	
