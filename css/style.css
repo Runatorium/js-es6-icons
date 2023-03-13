@@ -1,0 +1,17 @@
+.maincontaier{
+    display: flex;
+    justify-content: center;
+}
+#container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1000px;
+    height: 400px;
+    justify-content: center;
+}
+
+.card{
+    width: 100px;
+    height: 75px;
+    padding: 10px;
+}
