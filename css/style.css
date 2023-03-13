@@ -11,7 +11,13 @@
 }
 
 .card{
+    display: flex;
+    border-style: groove;
     width: 100px;
-    height: 75px;
-    padding: 10px;
+    height: 90px;
+    padding: 20px;
+    margin: 20px;
+    justify-content: center;
+    text-align: center;
 }
+
