@@ -1,4 +1,4 @@
-[
+let DataList = [
 	{
 		name: 'cat',
 		prefix: 'fa-',
@@ -112,3 +112,18 @@
 		color: 'blue'
 	}
 ];
+
+
+
+let containerdom = document.getElementById('container-cards');
+containerdom.innerHTML = "";
+
+DataList.forEach((elemento, i) => {
+    const card = `<div class="card">
+                        <div class="txt-box">
+                             <i class="fa-solid ${DataList[i].prefix}${DataList[i].name}"></i>
+                             <h2 id="body-txt">${DataList[i].name}</h2>
+                        </div>
+                    </div>`;   
+    containerdom.innerHTML += card
+});
